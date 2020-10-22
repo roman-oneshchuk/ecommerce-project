@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %} 
+	Home
+{% endblock %}
+
 {% block content %}
 
-<h1>Home</h1>
+<div class="conteiner-fluid">
+	<div class="row">
+		<img src="{% static 'sale1.png' %}" class='img-fluid' alt="Responsive image">
+	</div>
+</div>
 
 {% endblock %}
