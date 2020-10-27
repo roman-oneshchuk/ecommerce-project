@@ -18,4 +18,8 @@ urlpatterns = [
 
     path('account/create/', views.signUpView, name='signup'),
 
+    path('account/login/', views.login_view, name='login'),
+
+    path('account/signout/', views.signoutView, name='signout'),
+
 ]

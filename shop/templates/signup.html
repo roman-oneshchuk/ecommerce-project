@@ -2,14 +2,14 @@
 
 {% load static %}
 
-{% load crispy_forms_tags %} <!-- чтобы использовать криспи формс в форме регистрации нужно добавить эту надпись после load static -->
+{% load crispy_forms_tags %}
 
-{% block title %} 
-	Create New Account
+{% block title %}
+	Creat New Account
 {% endblock %}
 
 {% block content %}
-	
+
 	<div>
 		{% if not form.is_valid %}
 			<div>
@@ -18,33 +18,32 @@
 					Create a new account
 				</h1>
 				<br>
-				<div class="col-9 col-sm-9 col-md-6 col-lg-6 mx-auto bg-light">
+				<div class="col-9 col-sm-9 col-md-6 col-lg-5 mx-auto bg-light">
 					<br>
-					<p>Please enter the following information to create a new account</p>
-					<form action="post">
+					<p>Please input the following information to create a new account</p>
+					<form method="post">
 						{% csrf_token %}
-						<p>{{ form | crispy }}</p> <!-- добавляем прямую черту и КРИСПИ - чтобы использовать crispy_forms в форме регистрации -->
+						<p>{{ form | crispy }}</p>
 						<button type="submit" name="button" class="btn btn-secondary">SignUp</button>
 					</form>
+					
 				</div>
 			</div>
 		{% else %}
 		<div class="mx-auto">
 			<br>
 			<h1 class="product_title text-center">
-				Your account has been successfully created!
+				Your account has been successfully created
 			</h1>
 			<br>
 			<div>
-				<p>Your account is ready to use</p>
+				<p>Your account has been created and ready to use!</p>
 				<br>
 				<a href="{% url 'home' %}">Continue shopping</a>
 			</div>
 		</div>
 		{% endif %}
 	</div>
-
-
 
 
 {% endblock %}
